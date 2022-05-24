@@ -23,6 +23,8 @@ final class ViewController: UIViewController {
         configureLayout()
         configureAppearance()
         bindViews()
+
+        applySnapshot()
     }
 
     func addViews() {
@@ -46,8 +48,6 @@ final class ViewController: UIViewController {
         searchBar.searchTextField.addTarget(self, action: #selector(searchAction), for: .editingChanged)
 
         collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.reuseIdentifier)
-
-        applySnapshot()
     }
 
     @objc private func searchAction() {
